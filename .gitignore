@@ -1,0 +1,20 @@
+# Byte-compiled / temporary
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Virtual environment
+venv/
+env/
+
+# Database
+db.sqlite3
+
+# Secrets and Configurations
+*.env
+.env
+/config/settings_local.py
+
+# Static files
+/staticfiles/
