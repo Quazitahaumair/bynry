@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Service Request Form</title>
+</head>
+<body>
+    <h2>Submit a Service Request</h2>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}  <!-- Automatically renders form fields with validation -->
+
+        <button type="submit">Submit Request</button>
+    </form>
+
+    <!-- Display form errors if any -->
+    {% if form.errors %}
+        <div style="color: red;">
+            <p>Please fix the following errors:</p>
+            <ul>
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <li>{{ field.label }}: {{ error }}</li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+</body>
+</html>
